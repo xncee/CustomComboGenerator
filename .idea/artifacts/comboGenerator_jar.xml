@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="comboGenerator:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/comboGenerator_jar</output-path>
+    <root id="archive" name="comboGenerator.jar">
+      <element id="module-output" name="comboGenerator" />
+    </root>
+  </artifact>
+</component>

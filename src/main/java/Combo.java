@@ -21,12 +21,13 @@ public class Combo extends JFrame {
 
     private JPanel mainPanel;
 
-    static Scanner input = new Scanner(System.in);
+    //static Scanner input = new Scanner(System.in);
+    int counter = 0;
     static List<String> user_email_list = new ArrayList<>();
     static Iterator<String> it;
     static String current;
     public Combo() {
-        currentEmailLabel.setText(current);
+        currentEmailLabel.setText("[%d/%d] ".formatted(counter++, user_email_list.size())+current);
         passwordsTextArea.setLineWrap(true);
         passwordsTextArea.setWrapStyleWord(true);
         nextButton.addActionListener(new ActionListener() {
@@ -45,7 +46,7 @@ public class Combo extends JFrame {
                     current = it.next();
                     if (current.contains(":")) break;
                 }
-                currentEmailLabel.setText(current);
+                currentEmailLabel.setText("[%d/%d] ".formatted(counter++, user_email_list.size())+current);
                 String email = current.split(":")[1];
                 copyToClipboard(email);
                 //JOptionPane.showMessageDialog(nextButton, current);

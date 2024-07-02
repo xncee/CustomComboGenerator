@@ -1,4 +1,3 @@
-import design.Color;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,7 +11,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
-public class Combo extends JFrame implements Color {
+public class Combo extends JFrame {
     private JLabel currentEmailLabel;
     private JButton nextButton;
     private JButton copyUserButton;

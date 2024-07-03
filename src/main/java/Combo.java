@@ -24,7 +24,7 @@ public class Combo extends JFrame {
     private JLabel counterLabel;
 
     //static Scanner input = new Scanner(System.in);
-    int counter = 0;
+    int counter = 1;
     static List<String> user_email_list = new ArrayList<>();
     static Iterator<String> it;
     static String current;

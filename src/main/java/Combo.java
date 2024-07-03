@@ -9,7 +9,6 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Scanner;
 
 public class Combo extends JFrame {
     private JLabel currentEmailLabel;
@@ -20,6 +19,8 @@ public class Combo extends JFrame {
     private JButton saveComboButton;
 
     private JPanel mainPanel;
+    private JRadioButton userPassRadioButton1;
+    private JRadioButton emailPassRadioButton;
 
     //static Scanner input = new Scanner(System.in);
     int counter = 0;
@@ -77,7 +78,10 @@ public class Combo extends JFrame {
                 String user = current.split(":")[0];
                 //String email = current.split(":")[1];
                 for (String password: passwords) {
-                    writeToFile("combo-user-pass.txt", user+":"+password);
+                    if (userPassRadioButton1.isSelected())
+                        writeToFile("combo-user-pass.txt", user+":"+password);
+                    else
+                        writeToFile("combo-email-pass.txt", user+":"+password);
                 }
 
                 passwordsTextArea.setText("");
@@ -106,7 +110,7 @@ public class Combo extends JFrame {
         Combo c = new Combo();
         c.setContentPane(c.mainPanel);
         c.setTitle("Combo generator");
-        c.setSize(400, 200);
+        c.setSize(300, 300);
         c.setVisible(true);
         c.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }

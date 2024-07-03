@@ -116,6 +116,8 @@ public class Combo extends JFrame {
         c.setSize(300, 300);
         c.setVisible(true);
         c.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        c.setResizable(false);
+        c.setAlwaysOnTop(true);
     }
 
     public static void loadEmailsList() {

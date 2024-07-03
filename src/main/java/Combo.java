@@ -33,6 +33,7 @@ public class Combo extends JFrame {
         currentEmailLabel.setText(current);
         passwordsTextArea.setLineWrap(true);
         passwordsTextArea.setWrapStyleWord(true);
+
         nextButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -79,12 +80,12 @@ public class Combo extends JFrame {
                     return;
                 }
                 String user = current.split(":")[0];
-                //String email = current.split(":")[1];
+                String email = current.split(":")[1];
                 for (String password: passwords) {
                     if (userPassRadioButton1.isSelected())
                         writeToFile("combo-user-pass.txt", user+":"+password);
                     else
-                        writeToFile("combo-email-pass.txt", user+":"+password);
+                        writeToFile("combo-email-pass.txt", email+":"+password);
                 }
 
                 passwordsTextArea.setText("");
@@ -154,4 +155,5 @@ public class Combo extends JFrame {
         writer.println(str);
         writer.close();
     }
+
 }

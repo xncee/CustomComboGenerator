@@ -21,6 +21,7 @@ public class Combo extends JFrame {
     private JPanel mainPanel;
     private JRadioButton userPassRadioButton1;
     private JRadioButton emailPassRadioButton;
+    private JLabel counterLabel;
 
     //static Scanner input = new Scanner(System.in);
     int counter = 0;
@@ -28,7 +29,8 @@ public class Combo extends JFrame {
     static Iterator<String> it;
     static String current;
     public Combo() {
-        currentEmailLabel.setText("[%d/%d] ".formatted(counter++, user_email_list.size())+current);
+        counterLabel.setText("[%d/%d] ".formatted(counter++, user_email_list.size()));
+        currentEmailLabel.setText(current);
         passwordsTextArea.setLineWrap(true);
         passwordsTextArea.setWrapStyleWord(true);
         nextButton.addActionListener(new ActionListener() {
@@ -47,7 +49,8 @@ public class Combo extends JFrame {
                     current = it.next();
                     if (current.contains(":")) break;
                 }
-                currentEmailLabel.setText("[%d/%d] ".formatted(counter++, user_email_list.size())+current);
+                counterLabel.setText("[%d/%d] ".formatted(counter++, user_email_list.size()));
+                currentEmailLabel.setText(current);
                 String email = current.split(":")[1];
                 copyToClipboard(email);
                 //JOptionPane.showMessageDialog(nextButton, current);
